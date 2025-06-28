@@ -1,0 +1,70 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "шоколад",
+      "description": "сладости"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "молочные изделия",
+      "description": "молочные изделия"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "молоко фермерское 3,2",
+      "description": "молоко",
+      "image": "",
+      "category": 2,
+      "price": 130.0,
+      "created_at": "2025-06-28",
+      "updated_at": "2025-06-28"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "молоко фермерское 2,5",
+      "description": "молоко",
+      "image": "",
+      "category": 2,
+      "price": 125.0,
+      "created_at": "2025-06-28",
+      "updated_at": "2025-06-28"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "батончик TWIX",
+      "description": "батончик",
+      "image": "",
+      "category": 1,
+      "price": 65.0,
+      "created_at": "2025-06-28",
+      "updated_at": "2025-06-28"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "AlpenGold с фундуком",
+      "description": "плитка",
+      "image": "",
+      "category": 1,
+      "price": 69.0,
+      "created_at": "2025-06-28",
+      "updated_at": "2025-06-28"
+    }
+  }
+]
