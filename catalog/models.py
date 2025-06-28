@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name_category = models.CharField(max_length='100', verbose_name='наименование категории')
+    name_category = models.CharField(max_length=100, verbose_name='наименование категории')
     description_category = models.TextField(blank=True, null=True, verbose_name='описание категории')
 
     class Meta:
@@ -15,7 +15,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    name_pr = models.CharField(max_length='100', verbose_name='наименование продукта')
+    name_pr = models.CharField(max_length=100, verbose_name='наименование продукта')
     description_pr = models.TextField(blank=True, null=True, verbose_name='описание продукта')
     image_pr = models.ImageField(upload_to='catalog.image_pr', blank=True, null=True, verbose_name='вид продукта')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
