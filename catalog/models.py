@@ -21,8 +21,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='категория', null=True, blank=True,
                                  related_name='products')
     price = models.FloatField(verbose_name='цена покупки')
-    created_at = models.DateField(verbose_name='дата создания')
-    updated_at = models.DateField(verbose_name='дата последнего изменения')
+    created_at = models.DateField(auto_now_add=True, verbose_name='дата создания')
+    updated_at = models.DateField(auto_now=True, verbose_name='дата последнего изменения')
 
     class Meta:
         verbose_name = 'Продукт'
