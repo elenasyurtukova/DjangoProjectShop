@@ -5,7 +5,7 @@ from blog.views import PostListView, PostCreateView, PostDeleteView, PostDetailV
 app_name = BlogConfig.name
 
 urlpatterns = [
-    path('posts/list', PostListView.as_view(), name='posts_list'),
+    path('posts/', PostListView.as_view(), name='posts_list'),
     path('posts/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
     path('posts/create', PostCreateView.as_view(), name='post_create'),
     path('posts/<int:pk>/update', PostUpdateView.as_view(), name='post_update'),
