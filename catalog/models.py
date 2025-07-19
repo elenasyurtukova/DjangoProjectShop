@@ -23,6 +23,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name='цена покупки')
     created_at = models.DateField(auto_now_add=True, verbose_name='дата создания')
     updated_at = models.DateField(auto_now=True, verbose_name='дата последнего изменения')
+    views_counter = models.PositiveIntegerField(verbose_name='счетчик просмотров', default=0)
 
     class Meta:
         verbose_name = 'Продукт'
