@@ -3,6 +3,7 @@ import os
 from django.forms import ModelForm
 from .models import Product
 from django.core.exceptions import ValidationError
+from constants import spam
 
 class ProductForm(ModelForm):
     class Meta:
@@ -20,16 +21,19 @@ class ProductForm(ModelForm):
         self.fields['price'].widget.attrs.update({'class': 'form-control',})
 
 
-    def clean(self):
-        spam = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
-        cleaned_data = super().clean()
-        name = cleaned_data.get('name')
-        description = cleaned_data.get('description')
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
         for elem in spam:
             if elem.upper() in name.upper():
                 self.add_error('name', f'name не может содержать слово {elem}')
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description')
+        for elem in spam:
             if elem.upper() in description.upper():
                 self.add_error('description', f'description не может содержать слово {elem}')
+        return description
 
 
     def clean_price(self):
