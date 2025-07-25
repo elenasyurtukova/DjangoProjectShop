@@ -11,6 +11,7 @@ class User(AbstractUser):
                                help_text='Загрузите свое фото')
     country = models.TextField(max_length=15, verbose_name='страна', blank=True, null=True,
                              help_text='Введите из какой вы страны')
+    token = models.CharField(max_length=100, blank=True, null=True, verbose_name='Токен')
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
