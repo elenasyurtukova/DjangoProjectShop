@@ -8,7 +8,7 @@ from constants import spam
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'description', 'image', 'category', 'price']
+        fields = ['name', 'description', 'image', 'category', 'price', 'status_publication']
 
     def __init__(self, *args, **kwargs):
         super(ProductForm, self).__init__(*args, **kwargs)
@@ -51,3 +51,9 @@ class ProductForm(ModelForm):
             if extension not in ['.jpeg', '.jpg', 'png']:
                 raise ValidationError("Файл должен быть в формате jpeg, jpg или png")
         return image
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'status_publication']
