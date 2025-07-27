@@ -74,5 +74,3 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
         product.delete()
 
         return redirect('catalog:products_list')
-
-
