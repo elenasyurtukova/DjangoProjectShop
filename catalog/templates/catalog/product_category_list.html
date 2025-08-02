@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% load my-tags %}
+{% block title %}Продукты в категории: {{ category.name }} {% endblock %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for product in products_in_category %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ product.image | media_filter }}">
+                    <div class="card-body">
+                        <p class="card-text">{{ product.name }}</p>
+                        <p class="card-text">{{ product.description|truncatechars:50 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
