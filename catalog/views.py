@@ -36,6 +36,7 @@ class ProductListView(ListView):
     #         cache.set('products_queryset', queryset, 60 * 15)
     #     return queryset
 
+
 class ProductCategoryListView(ListView):
     model = Product
     template_name = 'catalog/product_category_list.html'
@@ -45,7 +46,6 @@ class ProductCategoryListView(ListView):
         category_id = self.kwargs.get('category_id')
         context['products_in_category'] = ProductService.get_products_in_category(category_id)
         return context
-
 
 
 @method_decorator(cache_page(60 * 15), name='dispatch')
