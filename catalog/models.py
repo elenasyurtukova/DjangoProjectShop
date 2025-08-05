@@ -27,7 +27,8 @@ class Product(models.Model):
     updated_at = models.DateField(auto_now=True, verbose_name='дата последнего изменения')
     views_counter = models.PositiveIntegerField(verbose_name='счетчик просмотров', default=0)
     status_publication = models.BooleanField(verbose_name='статус публикации', default=False, null=True, blank=True)
-    owner = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name='владелец', null=True, blank=True, related_name='products')
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name='владелец', null=True, blank=True,
+                              related_name='products')
 
     class Meta:
         verbose_name = 'Продукт'
